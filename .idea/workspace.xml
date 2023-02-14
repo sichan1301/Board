@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="258862ef-0476-41fa-a395-41bef3ef4dc0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/main/paging.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/__MACOSX/board/._.DS_Store" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/category.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/dataItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/dataItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/dataList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/dataList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/new.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/new/new.js" afterDir="false" />
-    </list>
+    <list default="true" id="258862ef-0476-41fa-a395-41bef3ef4dc0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +46,7 @@
       <option name="presentableId" value="Default" />
       <updated>1676336356561</updated>
       <workItem from="1676336358814" duration="12075000" />
-      <workItem from="1676355446463" duration="2291000" />
+      <workItem from="1676355446463" duration="2817000" />
     </task>
     <servers />
   </component>
