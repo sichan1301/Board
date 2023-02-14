@@ -1,6 +1,10 @@
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
-const New = ({onCreate}) => {
+const New = ({onCreate,setIsNew}) => {
+
+  const navigate = useNavigate()
+
   const [info,setInfo] = useState({
     name:"",
     title:"",
@@ -23,9 +27,10 @@ const New = ({onCreate}) => {
       content:"",
       category:"가",
     })
+    setIsNew(true)
+    navigate("/")
+
   }
-
-
 
   return(
     <>
