@@ -11,6 +11,7 @@ function App() {
   const navigate = useNavigate()
   const [data,setData] = useState([])
   const [isNew, setIsNew] = useState(true);
+
   const onCreate = (info) =>{
     const newData = {
       id:uuidv4(),
@@ -18,6 +19,7 @@ function App() {
       ...info
     }
     setData([newData,...data])
+    setIsNew(true)
   }
 
   const onDelete = (targetId) => {
@@ -32,7 +34,7 @@ function App() {
 
   const onNewClick = () =>{
     setIsNew(false)
-    navigate("new")
+    navigate("/new")
   }
 
 
@@ -42,7 +44,7 @@ function App() {
 
       <Routes>
         <Route path ="/" element={<Main data={data} setData={setData} />} />
-        <Route path="/new" element={<New onCreate={onCreate} setIsNew ={setIsNew} />} />
+        <Route path="/new" element={<New onCreate={onCreate} />} />
         <Route path="/data/:id" element={<DataItem data = {data} onDelete={onDelete} onUpdate={onUpdate} />} />
       </Routes >
 

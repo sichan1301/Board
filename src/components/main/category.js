@@ -1,5 +1,6 @@
+import {categories} from "../../util/category";
+
 const Category = ({setCurrentCategory}) =>{
-  const categories = ['전체','가','나','다']
 
   return(
     <div className = "Category">

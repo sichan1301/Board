@@ -6,7 +6,8 @@ const DataList = ({data,currentCategory}) =>{
 
   const [currentPost,setCurrentPost] = useState([])
   const [page,setPage] = useState(1)
-  const [postPerPage,setPostPerPage] = useState(3)
+
+  const postPerPage = 3
   const indexOfLastPage =  page * postPerPage
   const indexOfFirstPage = indexOfLastPage - postPerPage
   const handlePageChange = (page) => {
@@ -19,6 +20,7 @@ const DataList = ({data,currentCategory}) =>{
     }
     return data.filter(item => item.category === currentCategory)
   }
+
   const filteredData = filterData(data,currentCategory);
 
   useEffect(()=>{
@@ -36,12 +38,12 @@ const DataList = ({data,currentCategory}) =>{
         <>
           <table className="table">
             <thead>
-            <tr>
-              <th>작성자</th>
-              <th>제목</th>
-              <th>작성날짜</th>
-              <th>카테고리</th>
-            </tr>
+              <tr>
+                <th>작성자</th>
+                <th>제목</th>
+                <th>작성날짜</th>
+                <th>카테고리</th>
+              </tr>
             </thead>
             <tbody>
             {
@@ -56,8 +58,8 @@ const DataList = ({data,currentCategory}) =>{
                 );
               })}
             </tbody>
-
           </table>
+
           <Paging totalCount = {filteredData.length} page = {page} postPerPage = {postPerPage} handlePageChange={handlePageChange} />
         </>
       }

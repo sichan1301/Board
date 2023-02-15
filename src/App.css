@@ -11,6 +11,7 @@ body{
   padding:50px;
   font-size: 14px;
 }
+
 /* New */
 .New{
   padding:20px;
@@ -39,9 +40,7 @@ body{
   height:100px;
 }
 
-
 /* Category */
-
 .Category{
   padding:20px;
   display: flex;
