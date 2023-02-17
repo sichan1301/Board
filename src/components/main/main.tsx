@@ -1,9 +1,14 @@
 import Category from "./category";
 import DataList from "./dataList";
 import {useState} from "react";
+import {IData} from '../../App';
 
-const Main = ({data}) => {
-  const [currentCategory,setCurrentCategory] = useState("전체")
+type MainProps = {
+    data:IData[]
+}
+
+const Main = ({data}:MainProps) => {
+  const [currentCategory,setCurrentCategory] = useState<string>("전체")
 
   return (
     <>

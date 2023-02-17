@@ -1,6 +1,13 @@
 import Pagination from "react-js-pagination";
 
-const Paging = ({totalCount,page,postPerPage,handlePageChange}) => {
+type PagingProps = {
+  totalCount:number,
+  page:number,
+  postPerPage:number,
+  handlePageChange(value:number):void
+}
+
+const Paging = ({totalCount,page,postPerPage,handlePageChange}:PagingProps) => {
 
   return (
     <Pagination

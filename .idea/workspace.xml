@@ -6,6 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="258862ef-0476-41fa-a395-41bef3ef4dc0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/detail/dataItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/detail/dataItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/category.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/dataList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/dataList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/paging.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/paging.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/new/new.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/new/new.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/category.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/category.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +46,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/a1/Desktop/board/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -54,7 +65,18 @@
       <workItem from="1676361603292" duration="438000" />
       <workItem from="1676362125717" duration="1930000" />
       <workItem from="1676422790263" duration="1676000" />
-      <workItem from="1676426320627" duration="1705000" />
+      <workItem from="1676426320627" duration="4532000" />
+      <workItem from="1676436511000" duration="1663000" />
+      <workItem from="1676438284942" duration="4765000" />
+      <workItem from="1676444750707" duration="3499000" />
+      <workItem from="1676448498837" duration="1645000" />
+      <workItem from="1676452454906" duration="4000" />
+      <workItem from="1676508952232" duration="194000" />
+      <workItem from="1676509335082" duration="541000" />
+      <workItem from="1676536111713" duration="992000" />
+      <workItem from="1676538156558" duration="407000" />
+      <workItem from="1676538835337" duration="624000" />
+      <workItem from="1676540078499" duration="966000" />
     </task>
     <servers />
   </component>
@@ -71,5 +93,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/new/new.tsx</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

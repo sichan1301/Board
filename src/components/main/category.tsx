@@ -1,6 +1,9 @@
 import {categories} from "../../util/category";
 
-const Category = ({setCurrentCategory}) =>{
+type CategoryProps = {
+  setCurrentCategory(value:string):void
+}
+const Category = ({setCurrentCategory}:CategoryProps) =>{
 
   return(
     <div className = "Category">

@@ -1,27 +1,33 @@
 import {Link} from "react-router-dom";
 import Paging from "./paging";
 import {useEffect, useState} from "react";
+import {IData} from "../../App";
 
-const DataList = ({data,currentCategory}) =>{
+type DataListProps = {
+  data:IData[],
+  currentCategory:string
+}
 
-  const [currentPost,setCurrentPost] = useState([])
-  const [page,setPage] = useState(1)
+const DataList = ({data,currentCategory}:DataListProps) =>{
 
-  const postPerPage = 3
-  const indexOfLastPage =  page * postPerPage
-  const indexOfFirstPage = indexOfLastPage - postPerPage
-  const handlePageChange = (page) => {
+  const [currentPost,setCurrentPost] = useState<IData[]>([])
+  const [page,setPage] = useState<number>(1)
+
+  const postPerPage:number = 3
+  const indexOfLastPage:number =  page * postPerPage
+  const indexOfFirstPage:number = indexOfLastPage - postPerPage
+  const handlePageChange = (page:number) => {
     setPage(page);
   };
 
-  const filterData = (data,currentCategory) =>{
+  const filterData = (data:IData[],currentCategory:string):IData[] =>{
     if(currentCategory === "전체"){
       return data
     }
-    return data.filter(item => item.category === currentCategory)
+    return data.filter((item:IData) => item.category === currentCategory)
   }
 
-  const filteredData = filterData(data,currentCategory);
+  const filteredData:IData[] = filterData(data,currentCategory);
 
   useEffect(()=>{
     setCurrentPost(filteredData.slice(indexOfFirstPage,indexOfLastPage))
@@ -47,7 +53,7 @@ const DataList = ({data,currentCategory}) =>{
             </thead>
             <tbody>
             {
-              currentPost.map((item) => {
+              currentPost.map((item:IData) => {
                 return (
                   <tr key={item.id}>
                     <td>{item.name}</td>

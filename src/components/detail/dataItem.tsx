@@ -1,23 +1,31 @@
 import {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
+import {IData} from "../../App";
 
-const DataItem = ({data,onDelete,onUpdate}) =>{
+type DataItemProps = {
+  data: IData[],
+  onUpdate(value:IData):void
+  onDelete(value:string):void,
+}
+
+const DataItem = ({data,onDelete,onUpdate}:DataItemProps) =>{
   const [isEdit,setIsEdit] = useState(false)
 
   const paramsId = useParams().id;
-  const filteredData = data.filter(item => item.id === paramsId)
   const navigate = useNavigate();
 
-  const [currentInfo,setCurrentInfo] = useState([{
+  const filteredData:IData[] = data.filter((item:IData) => item.id === paramsId)
+
+  const [currentInfo,setCurrentInfo] = useState({
     id:filteredData[0].id,
     created_date:filteredData[0].created_date,
     name:filteredData[0].name,
     title:filteredData[0].title,
     content:filteredData[0].content,
     category:filteredData[0].category
-  }])
+  })
 
-  const handleChange = (e) =>{
+  const handleChange = (e : React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>{
     setCurrentInfo({
       ...currentInfo,
       [e.target.name]:e.target.value

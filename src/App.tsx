@@ -1,19 +1,30 @@
 
 import './App.css';
 import {Routes, Route, useNavigate} from "react-router-dom";
-import {v4 as uuidv4} from 'uuid';
 import New from './components/new/new';
 import Main from './components/main/main';
 import DataItem from './components/detail/dataItem';
 import {useState} from "react";
+import {IInfo} from "./components/new/new";
+import {v4 as uuidv4} from 'uuid';
 
-function App() {
+export interface IData{
+  id:string,
+  created_date:number,
+  name:string,
+  title:string,
+  content:string,
+  category:string
+}
+
+const App = () => {
+
   const navigate = useNavigate()
-  const [data,setData] = useState([])
-  const [isNew, setIsNew] = useState(true);
+  const [data,setData] = useState<IData[]>([])
+  const [isNew, setIsNew] = useState<boolean>(true);
 
-  const onCreate = (info) =>{
-    const newData = {
+  const onCreate = (info:IInfo)=>{
+    const newData:IData = {
       id:uuidv4(),
       created_date:new Date().getTime(),
       ...info
@@ -22,12 +33,12 @@ function App() {
     setIsNew(true)
   }
 
-  const onDelete = (targetId) => {
+  const onDelete = (targetId:string) => {
     const newData = data.filter((item)=>(item.id !== targetId))
     setData(newData);
   }
 
-  const onUpdate = (targetData) => {
+  const onUpdate = (targetData:IData) => {
     const newData = data.map((item)=>item.id === targetData.id ? targetData : item)
     setData(newData)
   }
@@ -43,7 +54,7 @@ function App() {
     <div className="App">
 
       <Routes>
-        <Route path ="/" element={<Main data={data} setData={setData} />} />
+        <Route path ="/" element={<Main data={data} />} />
         <Route path="/new" element={<New onCreate={onCreate} />} />
         <Route path="/data/:id" element={<DataItem data = {data} onDelete={onDelete} onUpdate={onUpdate} />} />
       </Routes >

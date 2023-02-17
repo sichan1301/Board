@@ -1,22 +1,34 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 
-const New = ({onCreate}) => {
+export interface IInfo {
+  name:string,
+  title:string,
+  content:string,
+  category:string,
+}
+
+type NewProps = {
+  onCreate(value:IInfo):void
+}
+
+const New = ({onCreate}:NewProps) => {
 
   const navigate = useNavigate()
 
-  const [info,setInfo] = useState({
+  const [info,setInfo] = useState<IInfo>({
     name:"",
     title:"",
     content:"",
     category:"가",
   })
 
-  const handleChange = (e) =>{
+  const handleChange = (e : React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
       setInfo({
         ...info,
-        [e.target.name]:e.target.value
+        [e.currentTarget.name]:e.currentTarget.value
       })
+
   }
 
   const handleButton = () =>{
