@@ -5,8 +5,6 @@ import New from './components/new/new';
 import Main from './components/main/main';
 import DataItem from './components/detail/dataItem';
 import {useState} from "react";
-import {IInfo} from "./components/new/new";
-import {v4 as uuidv4} from 'uuid';
 
 export interface IData{
   id:string,
@@ -18,18 +16,12 @@ export interface IData{
 }
 
 const App = () => {
-
   const navigate = useNavigate()
   const [data,setData] = useState<IData[]>([])
   const [isNew, setIsNew] = useState<boolean>(true);
-
-  const onCreate = (info:IInfo)=>{
-    const newData:IData = {
-      id:uuidv4(),
-      created_date:new Date().getTime(),
-      ...info
-    }
-    setData([newData,...data])
+  
+  const onCreate = (info:IData)=>{
+    setData([info,...data])
     setIsNew(true)
   }
 

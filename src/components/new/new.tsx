@@ -1,22 +1,19 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
-
-export interface IInfo {
-  name:string,
-  title:string,
-  content:string,
-  category:string,
-}
+import { IData } from "../../App";
+import {v4 as uuidv4} from 'uuid';
 
 type NewProps = {
-  onCreate(value:IInfo):void
+  onCreate(value:IData):void
 }
 
 const New = ({onCreate}:NewProps) => {
 
   const navigate = useNavigate()
 
-  const [info,setInfo] = useState<IInfo>({
+  const [info,setInfo] = useState<IData>({
+    id:"",
+    created_date:0,
     name:"",
     title:"",
     content:"",
@@ -31,18 +28,16 @@ const New = ({onCreate}:NewProps) => {
 
   }
 
-  const handleButton = () =>{
-    onCreate(info)
-    setInfo({
-      name:"",
-      title:"",
-      content:"",
-      category:"가",
+  const handleButton = () =>{  
+    onCreate({
+      ...info,
+      id:uuidv4(),
+      created_date:new Date().getTime()
     })
+
     navigate("/")
-
   }
-
+  
   return(
     <>
       <div className = "New">

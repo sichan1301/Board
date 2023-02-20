@@ -7,6 +7,7 @@ type MainProps = {
     data:IData[]
 }
 
+
 const Main = ({data}:MainProps) => {
   const [currentCategory,setCurrentCategory] = useState<string>("전체")
 

@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 import {IData} from "../../App";
 
@@ -57,10 +57,6 @@ const DataItem = ({data,onDelete,onUpdate}:DataItemProps) =>{
     onUpdate(currentInfo)
     setIsEdit(!isEdit)
   }
-
-  useEffect(()=>{
-    console.log(currentInfo)
-  },[currentInfo])
 
   return (
     <>
