@@ -1,14 +1,17 @@
 import {Link} from "react-router-dom";
 import Paging from "./paging";
 import {useEffect, useState} from "react";
-import {IData} from "../../App";
+import {IData} from "../../store/board";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/store";
 
 type DataListProps = {
-  data:IData[],
   currentCategory:string
 }
 
-const DataList = ({data,currentCategory}:DataListProps) =>{
+const DataList = ({currentCategory}:DataListProps) =>{
+
+  const posts = useSelector((state:RootState) => state.board).posts
 
   const [currentPost,setCurrentPost] = useState<IData[]>([])
   const [page,setPage] = useState<number>(1)
@@ -20,14 +23,14 @@ const DataList = ({data,currentCategory}:DataListProps) =>{
     setPage(page);
   };
 
-  const filterData = (data:IData[],currentCategory:string):IData[] =>{
+  const filterData = (posts:IData[],currentCategory:string):IData[] =>{
     if(currentCategory === "전체"){
-      return data
+      return posts
     }
-    return data.filter((item:IData) => item.category === currentCategory)
+    return posts.filter((item:IData) => item.category === currentCategory)
   }
 
-  const filteredData:IData[] = filterData(data,currentCategory);
+  const filteredData:IData[] = filterData(posts,currentCategory);
 
   useEffect(()=>{
     setCurrentPost(filteredData.slice(indexOfFirstPage,indexOfLastPage))

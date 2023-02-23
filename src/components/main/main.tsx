@@ -1,24 +1,19 @@
 import Category from "./category";
 import DataList from "./dataList";
-import {useState} from "react";
-import {IData} from '../../App';
+import {useEffect, useState} from "react";
+import { useDispatch } from "react-redux";
+import { TOGGLE } from "../../store/isCreate";
 
-type MainProps = {
-    data:IData[]
-}
-
-
-const Main = ({data}:MainProps) => {
+const Main = () => {
   const [currentCategory,setCurrentCategory] = useState<string>("전체")
 
   return (
     <>
       <Category setCurrentCategory={setCurrentCategory} />
-      <DataList data={data} currentCategory={currentCategory}/> <br />
+      <DataList currentCategory={currentCategory}/> <br />
     </>
   )
 }
-
 
 export default Main
 

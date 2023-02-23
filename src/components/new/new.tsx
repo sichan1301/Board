@@ -1,14 +1,14 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import { IData } from "../../App";
+import { IData } from "../../store/board";
 import {v4 as uuidv4} from 'uuid';
+import { useDispatch } from "react-redux";
+import { ADD } from "../../store/board";
+import { TOGGLE } from "../../store/isCreate";
 
-type NewProps = {
-  onCreate(value:IData):void
-}
-
-const New = ({onCreate}:NewProps) => {
-
+const New = () => {
+  
+  const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const [info,setInfo] = useState<IData>({
@@ -25,18 +25,19 @@ const New = ({onCreate}:NewProps) => {
         ...info,
         [e.currentTarget.name]:e.currentTarget.value
       })
-
   }
 
   const handleButton = () =>{  
-    onCreate({
-      ...info,
-      id:uuidv4(),
-      created_date:new Date().getTime()
-    })
-
+    dispatch(ADD({...info,id:uuidv4(),created_date:new Date().getTime()}))
     navigate("/")
   }
+
+  useEffect(() => {
+    dispatch(TOGGLE(false))
+    return () => {
+      dispatch(TOGGLE(true));
+    }
+  }, []);
   
   return(
     <>

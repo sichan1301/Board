@@ -1,20 +1,20 @@
 import {useState} from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {useNavigate, useParams} from "react-router-dom";
-import {IData} from "../../App";
+import {IData} from "../../store/board";
+import { DELETE,UPDATE } from "../../store/board";
+import { RootState } from "../../store/store";
 
-type DataItemProps = {
-  data: IData[],
-  onUpdate(value:IData):void
-  onDelete(value:string):void,
-}
-
-const DataItem = ({data,onDelete,onUpdate}:DataItemProps) =>{
+const DataItem = () =>{
+  const posts = useSelector((state:RootState)=>state.board).posts
+  const dispatch = useDispatch();
+  
   const [isEdit,setIsEdit] = useState(false)
 
   const paramsId = useParams().id;
   const navigate = useNavigate();
 
-  const filteredData:IData[] = data.filter((item:IData) => item.id === paramsId)
+  const filteredData:IData[] = posts.filter((item:IData) => item.id === paramsId)
 
   const [currentInfo,setCurrentInfo] = useState({
     id:filteredData[0].id,
@@ -46,7 +46,7 @@ const DataItem = ({data,onDelete,onUpdate}:DataItemProps) =>{
 
   const handleDelete = () =>{
     if(window.confirm("정말로 삭제하시겠습니까?")) {
-      onDelete(filteredData[0].id)
+      dispatch(DELETE(filteredData[0].id))
       navigate("/")
     }else{
       return
@@ -54,7 +54,7 @@ const DataItem = ({data,onDelete,onUpdate}:DataItemProps) =>{
   }
 
   const handleUpdate = () =>{
-    onUpdate(currentInfo)
+    dispatch(UPDATE(currentInfo))
     setIsEdit(!isEdit)
   }
 

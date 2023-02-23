@@ -1,4 +1,4 @@
-import {categories} from "../../util/category";
+import {categories} from "../../dummy/categories";
 
 type CategoryProps = {
   setCurrentCategory(value:string):void
@@ -14,7 +14,6 @@ const Category = ({setCurrentCategory}:CategoryProps) =>{
           </div>
         ))
       }
-
     </div>
   )
 }
